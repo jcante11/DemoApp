@@ -15,6 +15,13 @@
 		18CAAF242BE6BF1300522643 /* DemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAF232BE6BF1300522643 /* DemoAppUITests.swift */; };
 		18CAAF262BE6BF1300522643 /* DemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAAF252BE6BF1300522643 /* DemoAppUITestsLaunchTests.swift */; };
 		18D313D72BFBD0C7007BA653 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D313D62BFBD0C7007BA653 /* QuestionView.swift */; };
+		18D313DA2C014FC0007BA653 /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D313D92C014FC0007BA653 /* QuizManager.swift */; };
+		18D313DD2C0158A3007BA653 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 18D313DC2C0158A3007BA653 /* Supabase */; };
+		18D313DF2C0158AB007BA653 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 18D313DE2C0158AB007BA653 /* Storage */; };
+		18D313E12C0158B0007BA653 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 18D313E02C0158B0007BA653 /* Realtime */; };
+		18D313E32C0158B4007BA653 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 18D313E22C0158B4007BA653 /* PostgREST */; };
+		18D313E52C0158B8007BA653 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 18D313E42C0158B8007BA653 /* Functions */; };
+		18D313E72C0158BB007BA653 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 18D313E62C0158BB007BA653 /* Auth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,7 @@
 		18CAAF232BE6BF1300522643 /* DemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppUITests.swift; sourceTree = "<group>"; };
 		18CAAF252BE6BF1300522643 /* DemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		18D313D62BFBD0C7007BA653 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		18D313D92C014FC0007BA653 /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D313E52C0158B8007BA653 /* Functions in Frameworks */,
+				18D313E32C0158B4007BA653 /* PostgREST in Frameworks */,
+				18D313E72C0158BB007BA653 /* Auth in Frameworks */,
+				18D313E12C0158B0007BA653 /* Realtime in Frameworks */,
+				18D313DF2C0158AB007BA653 /* Storage in Frameworks */,
+				18D313DD2C0158A3007BA653 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +94,7 @@
 				18CAAF182BE6BF1300522643 /* DemoAppTests */,
 				18CAAF222BE6BF1300522643 /* DemoAppUITests */,
 				18CAAF062BE6BF1200522643 /* Products */,
+				18D313DB2C015898007BA653 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +116,7 @@
 				18CAAF0C2BE6BF1300522643 /* Assets.xcassets */,
 				18CAAF0E2BE6BF1300522643 /* Preview Content */,
 				18D313D62BFBD0C7007BA653 /* QuestionView.swift */,
+				18D313D92C014FC0007BA653 /* QuizManager.swift */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -130,6 +146,13 @@
 			path = DemoAppUITests;
 			sourceTree = "<group>";
 		};
+		18D313DB2C015898007BA653 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +169,14 @@
 			dependencies = (
 			);
 			name = DemoApp;
+			packageProductDependencies = (
+				18D313DC2C0158A3007BA653 /* Supabase */,
+				18D313DE2C0158AB007BA653 /* Storage */,
+				18D313E02C0158B0007BA653 /* Realtime */,
+				18D313E22C0158B4007BA653 /* PostgREST */,
+				18D313E42C0158B8007BA653 /* Functions */,
+				18D313E62C0158BB007BA653 /* Auth */,
+			);
 			productName = DemoApp;
 			productReference = 18CAAF052BE6BF1200522643 /* DemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +249,9 @@
 				Base,
 			);
 			mainGroup = 18CAAEFC2BE6BF1200522643;
+			packageReferences = (
+				18D313D82C014F7B007BA653 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 18CAAF062BE6BF1200522643 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D313DA2C014FC0007BA653 /* QuizManager.swift in Sources */,
 				18CAAF0B2BE6BF1200522643 /* ContentView.swift in Sources */,
 				18D313D72BFBD0C7007BA653 /* QuestionView.swift in Sources */,
 				18CAAF092BE6BF1200522643 /* DemoAppApp.swift in Sources */,
@@ -586,6 +621,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18D313D82C014F7B007BA653 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18D313DC2C0158A3007BA653 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D313D82C014F7B007BA653 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		18D313DE2C0158AB007BA653 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D313D82C014F7B007BA653 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		18D313E02C0158B0007BA653 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D313D82C014F7B007BA653 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		18D313E22C0158B4007BA653 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D313D82C014F7B007BA653 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		18D313E42C0158B8007BA653 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D313D82C014F7B007BA653 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		18D313E62C0158BB007BA653 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18D313D82C014F7B007BA653 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18CAAEFD2BE6BF1200522643 /* Project object */;
 }

@@ -7,19 +7,36 @@
 
 import SwiftUI
 
-class QuizManager: ObservableObject {
-    var mockQuestions = [
-    Question(title: "Question 1", answer: "a", choices: ["a", "b", "c", "d"]),
-    Question(title: "Question 2", answer: "a", choices: ["a", "b", "c", "d"]),
-    Question(title: "Question 3", answer: "a", choices: ["a", "b", "c", "d"])]
-}
-
 struct ContentView: View {
     @StateObject var manager = QuizManager()
     
     var body: some View {
         TabView{
-            ForEach(manager.mockQuestions, id: \.id) { question in QuestionView(question: question)}
+            ForEach(manager.mockQuestions.indices, id: \.self) { index in
+                VStack {
+                    Spacer()
+                    QuestionView(question: $manager.mockQuestions[index])
+                    Spacer()
+                    
+                    if let lastQuestion = manager.mockQuestions.last, lastQuestion.id == manager.mockQuestions[index].id {
+                        
+                        Button {
+                            print(manager.gradeQuiz())
+                        } label: {
+                            Text("Submit")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                        .fill(Color("AppColor"))
+                                        .frame(width: 340)
+                                )
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(!manager.canSubmitQuiz())
+                    }
+                }
+            }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
     }
